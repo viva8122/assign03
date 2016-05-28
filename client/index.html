@@ -38,15 +38,22 @@
 
 		<!-- TODO LIST -->
 		<div id="todo-list" class="row">
-			<div class="col-sm-4 col-sm-offset-4">
+			<div class="col-sm-6 col-sm-offset-3">
 
-				<div class="checkbox"  ng-repeat="todo in todos">
-                    <label>
-                        <input type="checkbox" ng-model="todo.done" ng-change="updateDone(todo)"> {{ todo.text }}
-                        <button ng-show = "todo.done" ng-click = "deleteTodo()">Delete</button>
-                    </label>
-                </div>
-                             
+				<!--<div class="checkbox"  ng-repeat="todo in todos"> -->
+				<table>
+				<tr ng-repeat="todo in todos">
+                    <td>
+                    	<label>
+                        	<input type="checkbox" ng-model="todo.done" ng-change="updateDone(todo)" > {{ todo.text }}  		 
+                        </label>
+                    </td>
+                    <td> ... </td>
+                    <td>
+                        <button ng-show = "todo.done" ng-click = "removeTodo(todo)">Delete</button>
+                    </td>
+                </tr>
+                </table>             
 				<p class="text-center" ng-show="loading">
 					<span class="fa fa-spinner fa-spin fa-3x"></span>
 				</p>

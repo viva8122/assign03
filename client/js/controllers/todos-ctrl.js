@@ -57,7 +57,7 @@ angular.module('todoController', [])
 
 		// REMOVE ==================================================================
 		// when click delete, send the text to the node API
-		$scope.deleteTodo = function(todo2) {
+		$scope.removeTodo = function(todo2) {
 
 			// validate the formData to make sure that something is there
 			// if form is empty, nothing will happen
